@@ -1,0 +1,27 @@
+// Ref: https://github.com/nuxt-community/vuetify-module#customvariables
+//
+// The variables you want to modify
+// $font-size-root: 20px;
+
+$title-font: Poppins, sans-serif !important;
+$font-family: Poppins, sans-serif !important;
+$body-font-family: Poppins, sans-serif !important;
+$heading-font-family: Poppins, sans-serif !important;
+
+@import '~vuetify/src/styles/styles.sass';
+
+a,
+.v-application a {
+    font-family: Poppins, sans-serif !important;
+    color: #09b5aa;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.v-application {
+    font-family: Poppins, sans-serif !important;
+}
+
+a:hover {
+    text-decoration: underline;
+}
