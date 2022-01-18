@@ -9,7 +9,6 @@ export default {
 
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        // titleTemplate: '%s - nft-plus-studio',
         title: 'Reggie Escobar',
         meta: [
             { charset: 'utf-8' },
