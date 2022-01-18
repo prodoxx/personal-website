@@ -15,7 +15,9 @@
                 >NuxtJs</a
             >
             and published in
-            <a class="mx-2" href="#">Github</a>
+            <a class="mx-2" href="https://github.com/prodoxx/personal-website"
+                >Github</a
+            >
         </p>
     </v-app>
 </template>
@@ -26,9 +28,9 @@ export default {
     data() {
         return {
             title: 'Reggie Escobar',
-        }
+        };
     },
-}
+};
 </script>
 <style lang="scss" scoped>
 #logo {
