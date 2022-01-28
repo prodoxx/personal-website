@@ -22,7 +22,7 @@
                 </li>
                 <li>
                     Now I’m in either one of these countries/cities: Belize,
-                    Taiwan, San Francisco, Toronto, or Mexico City
+                    Taiwan, San Francisco, Toronto, Mexico City or Georgia (country)
                 </li>
                 <li>
                     I read lots of books - mostly about tech and
@@ -43,11 +43,6 @@
                     system.
                 </li>
                 <li>
-                    I was a Lead Full-stack developer at
-                    <a target="_blank" href="https://unbanked.com">Unbanked.</a>
-                </li>
-                <li>I’m not anymore, but they’re still cool.</li>
-                <li>
                     I enjoy building products; some are successful and some were
                     not so successful.
                 </li>
@@ -61,7 +56,7 @@
                         >Gift Cards Belize</a
                     >
                     &
-                    <a target="_blank" href="https://nftplus.studio"
+                    <a target="_blank" href="https://app.nftplus.studio"
                         >NFT+ Studio</a
                     >.
                 </li>
