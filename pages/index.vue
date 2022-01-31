@@ -103,7 +103,7 @@ export default {
 }
 #about-me {
     li {
-        margin-bottom: 0.5em;
+        margin-bottom: 0.6em;
         margin-left: 0.5em;
         font-size: 1.18em;
     }
