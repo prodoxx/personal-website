@@ -73,7 +73,7 @@ onMounted(() => {
           that users love.
         </p>
         <p class="text-xl text-gray-600 mb-8">
-          Check out what <a href="/blog" class="underline">I'm writing in my blog</a>, find me on
+          Check out what <a href="#" class="underline">I'm writing in my blog</a>, find me on
           <a href="https://x.com/_reggieescobar" class="underline">Twitter</a>, or on
           <a href="https://www.linkedin.com/in/reggie-escobar/" class="underline">LinkedIn</a>, or just
           <a href="mailto:contact@reggieescobar.com" class="underline">send me an email</a> saying hi or if you want to
