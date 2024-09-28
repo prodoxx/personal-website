@@ -1,9 +1,5 @@
 <template>
-  <div class="min-h-screen bg-white">
-    <ProfileCard />
-  </div>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
-
-<script setup>
-import ProfileCard from "~/components/ProfileCard.vue";
-</script>
