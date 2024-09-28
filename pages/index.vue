@@ -5,8 +5,6 @@
 </template>
 
 <script setup lang="ts">
-import { useHead } from "#head";
-
 useHead({
   title: "Reggie Escobar - Software Engineer",
   meta: [
