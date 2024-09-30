@@ -10,7 +10,7 @@ const createCirclePath = () => {
   if (!textElement.value || !textWrapper.value) return;
 
   const rect = textElement.value.getBoundingClientRect();
-  const padding = 1; // Adjust padding as needed
+  const padding = 1;
 
   const width = rect.width + padding * 2;
   const height = rect.height + padding * 50;
