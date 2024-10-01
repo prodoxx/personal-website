@@ -1,6 +1,9 @@
 <template>
   <div class="min-h-screen bg-white">
-    <ProfileCard />
+    <ContentWrapper>
+      <Logo />
+      <ProfileCard />
+    </ContentWrapper>
   </div>
 </template>
 
