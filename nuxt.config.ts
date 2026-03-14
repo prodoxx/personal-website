@@ -4,7 +4,13 @@ import tailwindTypography from "@tailwindcss/typography";
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "nuxt-gtag", "@nuxt/content"],
+  modules: ["@nuxtjs/tailwindcss", "nuxt-gtag", "@nuxt/content", "@nuxtjs/sitemap"],
+  site: {
+    url: "https://reggieescobar.com",
+  },
+  sitemap: {
+    strictNuxtContentPaths: true,
+  },
   gtag: {
     enabled: process.env.NODE_ENV === "production",
     id: "G-LZRLE3P50T",

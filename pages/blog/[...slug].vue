@@ -14,6 +14,11 @@ const formatDate = (date: string) => {
   });
 };
 
+const postUrl = `https://reggieescobar.com${post.value?._path}`;
+const postImage = post.value?.image
+  ? `https://reggieescobar.com${post.value.image}`
+  : "https://reggieescobar.com/images/reggie.png";
+
 useHead({
   title: `${post.value?.title} - Reggie Escobar`,
   meta: [
@@ -21,12 +26,16 @@ useHead({
     { name: "keywords", content: post.value?.keywords },
     { property: "og:title", content: `${post.value?.title} - Reggie Escobar` },
     { property: "og:description", content: post.value?.description },
-    { property: "og:image", content: post.value?.image },
-    { property: "og:url", content: `https://reggieescobar.com/blog/${post.value?._path}` },
+    { property: "og:image", content: postImage },
+    { property: "og:url", content: postUrl },
+    { property: "og:type", content: "article" },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:creator", content: "@_reggieescobar" },
+    { name: "twitter:title", content: `${post.value?.title} - Reggie Escobar` },
+    { name: "twitter:description", content: post.value?.description },
+    { name: "twitter:image", content: postImage },
   ],
-  link: [{ rel: "canonical", href: `https://reggieescobar.com/blog/${post.value?._path}` }],
+  link: [{ rel: "canonical", href: postUrl }],
 });
 </script>
 <template>
