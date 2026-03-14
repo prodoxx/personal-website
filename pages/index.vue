@@ -271,14 +271,14 @@ useHead({
       content:
         "Your personal CTO for hire. 11 years building software — SaaS, mobile apps, and scalable products. Worked with YC-backed startups. Available for contract work.",
     },
-    { property: "og:image", content: "/images/reggie.png" },
+    { property: "og:image", content: "https://reggieescobar.com/images/reggie.png" },
     { property: "og:url", content: "https://reggieescobar.com" },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:creator", content: "@_reggieescobar" },
     { name: "twitter:title", content: "Reggie Escobar — Fractional CTO & Software Engineer for Hire" },
     { name: "twitter:description", content: "Your personal CTO for hire. 11 years building software — SaaS, mobile apps, and scalable products." },
-    { name: "twitter:image", content: "/images/reggie.png" },
+    { name: "twitter:image", content: "https://reggieescobar.com/images/reggie.png" },
   ],
   link: [{ rel: "canonical", href: "https://reggieescobar.com" }],
 });
