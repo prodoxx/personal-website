@@ -30,8 +30,9 @@ export default defineNuxtConfig({
         { rel: "manifest", href: "/site.webmanifest" },
       ],
       meta: [
-        { name: "msapplication-TileColor", content: "#da532c" },
-        { name: "theme-color", content: "#ffffff" },
+        { name: "msapplication-TileColor", content: "#14100e" },
+        { name: "theme-color", content: "#0b0809" },
+        { name: "color-scheme", content: "dark" },
       ],
     },
   },

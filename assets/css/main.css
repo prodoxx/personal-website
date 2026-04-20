@@ -1,5 +1,386 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap");
 
+/* ==========================================================================
+   THEME TOKENS
+   ========================================================================== */
+:root {
+  --bg-0: #0b0809;
+  --bg-1: #14100e;
+  --bg-2: #1e1a18;
+  --ink-0: #ffffff;
+  --ink-1: #efece5;
+  --ink-2: #b0a89a;
+  --ink-3: #7a7265;
+
+  --accent-cyan: #e8b564;
+  --accent-violet: #e06c87;
+  --accent-indigo: #ea8859;
+  --accent-pink: #e99aad;
+  --accent-lime: #bef264;
+
+  --grad-primary: linear-gradient(135deg, #e8b564 0%, #ea8859 50%, #e06c87 100%);
+  --grad-warm: linear-gradient(135deg, #f4d48a 0%, #ea8859 55%, #e06c87 100%);
+  --grad-ice: linear-gradient(135deg, #f8e9c0 0%, #e8b564 55%, #e99aad 100%);
+
+  --glow-cyan: 0 0 40px rgba(232, 181, 100, 0.35);
+  --glow-violet: 0 0 40px rgba(224, 108, 135, 0.35);
+  --glow-indigo: 0 0 40px rgba(234, 136, 89, 0.35);
+}
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+html,
 body {
-  font-family: "Inter", sans-serif;
+  background-color: var(--bg-0);
+  color: var(--ink-1);
+  font-family: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(224, 108, 135, 0.35);
+  color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-0);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #e8b56433, #e06c8733);
+  border-radius: 8px;
+  border: 2px solid var(--bg-0);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #e8b56466, #e06c8766);
+}
+
+/* ==========================================================================
+   TYPE UTILITIES
+   ========================================================================== */
+.font-mono-ui {
+  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+
+.text-gradient {
+  color: #e8b564;
+}
+
+.text-gradient-warm {
+  color: #e06c87;
+}
+
+.text-gradient-ice {
+  color: #f4d48a;
+}
+
+.eyebrow {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+}
+
+/* ==========================================================================
+   GLASS / BORDER EFFECTS
+   ========================================================================== */
+.glass {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0.015) 100%
+  );
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-strong {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient border trick */
+.grad-border {
+  position: relative;
+  background: linear-gradient(var(--bg-1), var(--bg-1)) padding-box,
+    linear-gradient(135deg, rgba(232, 181, 100, 0.6), rgba(224, 108, 135, 0.6)) border-box;
+  border: 1px solid transparent;
+}
+
+.grad-border-soft {
+  position: relative;
+  background: linear-gradient(var(--bg-1), var(--bg-1)) padding-box,
+    linear-gradient(135deg, rgba(232, 181, 100, 0.2), rgba(224, 108, 135, 0.2)) border-box;
+  border: 1px solid transparent;
+}
+
+/* Subtle grid overlay */
+.grid-overlay {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Noise texture */
+.noise {
+  position: relative;
+}
+.noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.9'/></svg>");
+}
+
+/* ==========================================================================
+   GLOW & HOVER
+   ========================================================================== */
+.glow-cyan {
+  box-shadow: var(--glow-cyan);
+}
+.glow-violet {
+  box-shadow: var(--glow-violet);
+}
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 60px -20px rgba(234, 136, 89, 0.4);
+  border-color: rgba(224, 108, 135, 0.35);
+}
+
+/* Magnetic underline */
+.link-magnetic {
+  position: relative;
+  display: inline-block;
+}
+.link-magnetic::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 1px;
+  background: #e8b564;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.link-magnetic:hover::after {
+  transform: scaleX(1);
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.btn-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #14100e;
+  background: #e8b564;
+  box-shadow: 0 10px 40px -10px rgba(232, 181, 100, 0.55),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  white-space: nowrap;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: #f0c580;
+  box-shadow: 0 16px 50px -10px rgba(232, 181, 100, 0.8),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--ink-1);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.25s ease;
+}
+.btn-ghost:hover {
+  border-color: rgba(232, 181, 100, 0.45);
+  color: var(--accent-cyan);
+  background: rgba(232, 181, 100, 0.06);
+}
+
+/* ==========================================================================
+   KEYFRAMES
+   ========================================================================== */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px) }
+  50% { transform: translateY(-22px) }
+}
+
+@keyframes floatXY {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(30px, -40px) rotate(90deg); }
+  50% { transform: translate(-20px, -60px) rotate(180deg); }
+  75% { transform: translate(-40px, -30px) rotate(270deg); }
+  100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes spinReverse {
+  from { transform: rotate(360deg); }
+  to   { transform: rotate(0deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.5; filter: blur(80px); }
+  50% { opacity: 0.8; filter: blur(100px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-40px, 20px); }
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(var(--orbit-r, 220px)) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(var(--orbit-r, 220px)) rotate(-360deg); }
+}
+
+/* Animation utility classes */
+.a-fadeUp { animation: fadeUp 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.a-fadeIn { animation: fadeIn 0.7s ease both; }
+.a-float { animation: floatY 7s ease-in-out infinite; }
+.a-spinSlow { animation: spinSlow 30s linear infinite; }
+.a-spinReverse { animation: spinReverse 40s linear infinite; }
+
+.d-1 { animation-delay: 0.1s; }
+.d-2 { animation-delay: 0.2s; }
+.d-3 { animation-delay: 0.3s; }
+.d-4 { animation-delay: 0.4s; }
+.d-5 { animation-delay: 0.5s; }
+.d-6 { animation-delay: 0.6s; }
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  /* Pure-CSS safety net: if the JS observer never adds .visible, the
+     element still reveals after a short delay so content can never be
+     stuck invisible (e.g. hydration issues, observer quirks, etc). */
+  animation: revealFallback 0.01s linear 1.2s forwards;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: none;
+}
+@keyframes revealFallback {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Marquee */
+.marquee-track {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+/* Caret / blink */
+.caret {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  background: var(--accent-cyan);
+  margin-left: 0.25rem;
+  animation: blink 1.1s steps(1) infinite;
+  vertical-align: middle;
+}
+
+/* Page transition */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+/* Respect motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
