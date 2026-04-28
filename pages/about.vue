@@ -36,7 +36,6 @@
           <div class="portrait-card grad-border">
             <img src="/hero.png" alt="Reggie Escobar" class="portrait-img" />
             <div class="portrait-glow"></div>
-            <div class="portrait-scan"></div>
           </div>
         </div>
       </div>
@@ -475,27 +474,6 @@ onMounted(async () => {
     linear-gradient(180deg, transparent 50%, rgba(5, 6, 13, 0.55) 100%);
   mix-blend-mode: screen;
   opacity: 0.8;
-}
-.portrait-scan {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 25%;
-  pointer-events: none;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(232, 181, 100, 0.08) 50%,
-    transparent 100%
-  );
-  animation: portraitScan 7s linear infinite;
-}
-@keyframes portraitScan {
-  0%   { transform: translateY(-30%); opacity: 0; }
-  20%  { opacity: 1; }
-  80%  { opacity: 1; }
-  100% { transform: translateY(420%); opacity: 0; }
 }
 
 /* Make the portrait taller on desktop so the full figure breathes */

@@ -12,10 +12,7 @@
     <!-- Grid overlay -->
     <div class="grid-overlay absolute inset-0 opacity-[0.18] mask-radial"></div>
 
-    <!-- Scanline sweep -->
-    <div class="scanline"></div>
-
-    <!-- Floating abstract SVG shapes -->
+<!-- Floating abstract SVG shapes -->
     <svg class="shape shape--hex" viewBox="0 0 200 200" fill="none">
       <polygon
         points="100,10 190,55 190,145 100,190 10,145 10,55"
@@ -198,24 +195,6 @@
 .mask-radial {
   -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, black 40%, transparent 80%);
   mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, black 40%, transparent 80%);
-}
-
-/* Scanline sweep */
-.scanline {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(232, 181, 100, 0.6), transparent);
-  box-shadow: 0 0 18px rgba(232, 181, 100, 0.55);
-  opacity: 0.35;
-  animation: scanMove 9s linear infinite;
-}
-@keyframes scanMove {
-  0%   { top: -2%; opacity: 0; }
-  10%  { opacity: 0.35; }
-  90%  { opacity: 0.35; }
-  100% { top: 102%; opacity: 0; }
 }
 
 /* Abstract shapes */
