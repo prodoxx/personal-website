@@ -17,6 +17,7 @@
           <ul class="footer-list">
             <li><NuxtLink to="/" class="link-magnetic">Home</NuxtLink></li>
             <li><NuxtLink to="/portfolio" class="link-magnetic">Portfolio</NuxtLink></li>
+            <li><NuxtLink to="/blog" class="link-magnetic">Blog</NuxtLink></li>
             <li><NuxtLink to="/about" class="link-magnetic">About</NuxtLink></li>
             <li><NuxtLink to="/contact" class="link-magnetic">Contact</NuxtLink></li>
           </ul>

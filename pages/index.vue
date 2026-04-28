@@ -96,13 +96,18 @@
           <span class="wf-label">Portfolio</span>
           <span class="wf-arrow">→</span>
         </NuxtLink>
-        <NuxtLink to="/about" class="wf-link">
+        <NuxtLink to="/blog" class="wf-link">
           <span class="wf-num font-mono-ui">03</span>
+          <span class="wf-label">Blog</span>
+          <span class="wf-arrow">→</span>
+        </NuxtLink>
+        <NuxtLink to="/about" class="wf-link">
+          <span class="wf-num font-mono-ui">04</span>
           <span class="wf-label">About</span>
           <span class="wf-arrow">→</span>
         </NuxtLink>
         <NuxtLink to="/contact" class="wf-link">
-          <span class="wf-num font-mono-ui">04</span>
+          <span class="wf-num font-mono-ui">05</span>
           <span class="wf-label">Contact</span>
           <span class="wf-arrow">→</span>
         </NuxtLink>

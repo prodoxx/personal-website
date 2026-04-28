@@ -102,8 +102,9 @@ const open = ref(false);
 const items = [
   { to: "/", label: "Home", index: "01" },
   { to: "/portfolio", label: "Portfolio", index: "02" },
-  { to: "/about", label: "About", index: "03" },
-  { to: "/contact", label: "Contact", index: "04" },
+  { to: "/blog", label: "Blog", index: "03" },
+  { to: "/about", label: "About", index: "04" },
+  { to: "/contact", label: "Contact", index: "05" },
 ];
 
 // Close drawer on route change
