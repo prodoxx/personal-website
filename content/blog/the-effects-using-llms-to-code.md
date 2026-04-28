@@ -1,0 +1,49 @@
+---
+title: "How I Forgot How to Code"
+date: "2026-04-28"
+description: "I went all in on AI coding tools and became incredibly productive. Then I lost my job and could not write a for loop."
+---
+ 
+## How It Started
+ 
+In August 2025, I started using LLMs to code. A bit of ChatGPT here and there, then I started using Cursor more aggressively, and right after that I started using Claude Code. It was such an amazing feeling. I was hooked and I wanted to build more things, both at work and on my own time. Even after my full-time job hours finished, I stayed up late prompting Claude Code to build apps. I built [DanbingAI](https://danbing.ai), [DecodeThisText](https://decodethistext.com), and a few other apps. It was a crazy feeling to be able to build an app from scratch over the weekend and have it live on the internet. The speed was incredible. Even at my full-time job I was just building fast. At a certain point I was only testing to see if things worked and was barely looking at the code besides a quick glance to make sure there were no security issues and that the AI had not accidentally committed our environment variables to GitHub. The excitement was crazy but I knew something was off. I could feel it. I just could not make much sense of it at the time.
+ 
+## The Downfall
+ 
+The company I was working with was not stable. I had previously worked with the co-founder the year prior and something had gone wrong, forcing him to shut the company down suddenly with no warning. He told us to wait and that he would start a new company and get funding. He eventually did, and at the start of this new company he did a mass hiring which I thought was kind of weird. This was a brand new company with no solid roadmap or product built yet, and that was definitely not the startup way. I brought it up but I do not think he wanted anyone pointing that out. Either way, I worked for this company knowing it was not very stable and that something sudden and unexpected could happen again, just like before. If it did happen it would be even worse because the previous company only had around four developers, while this new one had around twenty developers and other non-technical employees.
+ 
+Well, somewhere in between prompting and building, I forgot about the unstable company and got lost in the thrill of shipping with LLMs. Then December 2025 rolled around, which was around the same time the year prior when things had gone wrong at the other company. The co-founder was acting pretty strange and I had a bad feeling that history was about to repeat itself. I brought it up with my co-workers who had also been at the previous company. Two of us started polishing our resumes because we had a bad feeling something was coming. Then Christmas came and we got time off. New Year passed and it was time to come back to work, but suddenly there was a message in the #general channel on Slack saying that we had all worked very hard in 2025 and deserved another two weeks off. That was very strange. And that is when I realized something far more alarming.
+ 
+**I had forgotten how to code.**
+ 
+## A Tragedy
+ 
+I had fixed my resume, reached out to a recruiter and got an interview with a company. That is when I was given a live coding interview. It was an easy LeetCode problem. I had not done LeetCode in a while and, honestly, I had not really coded on my own in the last six months because I was going all in on LLMs as a so-called 10x productive software engineer. I embarrassed myself in that interview. To be fair, they caught me off guard. It was the first interview and I thought it was more of a cultural fit conversation since the recruiter had not mentioned there would be technical questions, let alone live coding. It was also an interview at 1 am when my usual sleep time was 10 pm. My brain was just not there. But when put on the spot I realized I could not even write a for loop. I knew how to solve the problem at the pseudocode level but I could not write actual code. That was horrible. The most horrible feeling ever. I had been coding since I was ten years old. It had been pure muscle memory for over two decades. I could code for hours without Googling or searching for answers, and now I could not write a `for` loop.
+ 
+Then it happened. My co-worker, who had seen it coming, warned me that any day now I was going to get the news. Then one day, the co-founder messaged me and all my co-workers privately that the company was closing. They were unable to secure funding and I was being let go effective immediately.
+ 
+## 10xing with LLMs
+ 
+For six months I had been prompting Claude Code and Cursor to build feature after feature, to the point where I was just glancing at the code and if it worked and looked fine, it was good to go. I think I actually got really good at it. I could spin up multiple agents simultaneously. I used my product manager skills to delegate work. I even started using markdown files to keep track of tasks, the same way I used to manage developer work back when I was a product manager and scrum master. This felt like the future. Tools kept appearing that made delegating to agents even easier. I was moving fast and I even demoed one of my projects in front of a large crowd. Even now I think I am pretty good at moving fast with AI and building products. I experimented a lot with spec-driven development, started using OpenClaw before it started trending, and even threw an OpenClaw party at my place where a bunch of developers in my city came to install, set up, and build cool things together. It was awesome.
+ 
+But now **I cannot code** and the worst thing that could happen has happened. I lost my job and needed to find a new one.
+ 
+## The Struggle
+ 
+Now it has been around three and a half months since I have been unemployed. For the first month I decided to keep working on my projects, then took two weeks off to travel and clear my head. When I came back I started doing LeetCode again, reviewing system design, and got somewhat good at it again. But then I started failing at companies that do not give DSA interview questions at all. The take-home timed assignments or the live "build me a rate limiter" sessions. I failed all of those miserably. These were exactly the types of interviews I would have passed without even preparing before, because I had so much experience as a software engineer. But because I had not coded, solved problems, or worked on my own projects for months, I had completely forgotten it all. It has been so bad that I started watching tutorials on React, TypeScript, and Go and building projects again from scratch. It feels like I am back in high school learning to code for the first time, except I am already 32. It feels almost impossible to fully catch up. On top of all that, companies keep encouraging developers to use AI and even making it a requirement, but you cannot use AI in interviews. So what exactly am I supposed to do? If you asked me to build a feature or a product from scratch, I could do it. I might not remember every syntax detail off the top of my head, but I can read code, understand what is good versus bad, and put guardrails on what an AI produces. That should count for something.
+ 
+## The Tradeoff
+ 
+I met a lot of founders and business owners who would say things like "I will fire the developer who is not using AI to 10x their productivity." Every company now is pushing their developers to use AI to code. They are even hiring fewer people because they believe AI can replace some of the work, and they might be right. But letting AI write 90% of your code is not the way to go. You will forget how to code. You will forget how to solve problems. You will train your brain to default to "let me ask the AI" instead of "let me figure this out myself." Whenever there is an error or a problem you will immediately hand it off to the AI. And why would you not, when there is an easy button that can give you a solution almost instantly? But doing that will cause your problem-solving and coding skills to atrophy. On the other hand, if you use AI less, you might risk being seen as too slow, especially now that everyone is expected to keep up with AI-assisted developers.
+ 
+It is a genuinely difficult tradeoff.
+ 
+## The Warning
+ 
+Do not let AI write all your code. Take a few days off from using it, or limit its use to repetitive tasks and quick lookups, the kinds of things you would normally Google. If you let it write 90% or more of your code and you get let go, and companies are laying off a lot of people right now, you will end up where I am. You do not want that. Nobody knows what the tech landscape will look like in the next six months. Getting hired as a developer is not easy right now, and it is even harder if you have been letting LLMs do the heavy lifting for months. Protect your skills. Balance your usage. Keep enough savings to last at least six months if the worst happens. Keep coding every day. Work on your own projects without AI when you can. Keep reviewing system design and problem-solving regularly. Problem-solving is genuinely fun when you let yourself do it.
+ 
+I have met a lot of developers who have told me they **forgot how to code** after relying on AI for months. Do not become one of them.
+ 
+## The End
+ 
+At this point I am still applying for jobs, but I am also contemplating whether I should just go all in on my own project. DecodeThisText has some paying users, not enough to support me, but some paying users is a signal that maybe I should lock in more on it. Who knows, maybe I will end up being the next successful indie hacker. It is scary to be honest. Part of me says go for it. The other part says I will regret it when I am broke. Only time will tell.
