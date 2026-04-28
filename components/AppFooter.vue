@@ -37,7 +37,6 @@
           <p class="footer-label">Also</p>
           <ul class="footer-list">
             <li><NuxtLink to="/blog" class="link-magnetic">Blog</NuxtLink></li>
-            <li><a href="/resume.pdf" target="_blank" class="link-magnetic">Résumé (PDF)</a></li>
           </ul>
         </div>
 
