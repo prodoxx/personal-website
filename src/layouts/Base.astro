@@ -40,6 +40,25 @@ const ogImage = new URL("/images/reggie.png", Astro.site);
       href={new URL("/rss.xml", Astro.site)}
     />
     <slot name="head" />
+    {
+      import.meta.env.PROD && (
+        <Fragment>
+          <script
+            is:inline
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-LZRLE3P50T"
+          ></script>
+          <script is:inline>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+              dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", "G-LZRLE3P50T");
+          </script>
+        </Fragment>
+      )
+    }
   </head>
   <body class="bg-white text-zinc-800">
     <div class="mx-auto flex min-h-screen max-w-2xl flex-col px-5">
