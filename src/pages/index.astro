@@ -1,10 +1,82 @@
 ---
+import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
+import hero from "../assets/hero.png";
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      name: "Reggie Escobar",
+      url: "https://reggieescobar.com/",
+      image: "https://reggieescobar.com/images/reggie.png",
+      jobTitle: "Senior Software Engineer",
+      sameAs: [
+        "https://github.com/prodoxx",
+        "https://x.com/_reggieescobar",
+        "https://www.linkedin.com/in/reggie-escobar/",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      name: "Reggie Escobar",
+      url: "https://reggieescobar.com/",
+    },
+  ],
+});
 ---
 
 <Base
   title="Reggie Escobar | Senior Software Engineer"
   description="Reggie Escobar is a senior software engineer with more than 7 years of experience. He builds web apps, mobile apps, and AI tools."
 >
-  <h1 class="text-4xl font-bold tracking-tight text-zinc-900">Reggie Escobar</h1>
+  <script type="application/ld+json" set:html={jsonLd} slot="head" />
+
+  <section class="flex flex-col-reverse gap-8 sm:flex-row sm:items-center">
+    <div class="flex-1">
+      <h1 class="text-4xl font-bold tracking-tight text-zinc-900">Reggie Escobar</h1>
+      <p class="mt-2 text-lg text-violet-700">Senior software engineer</p>
+      <p class="mt-4 text-zinc-600">
+        I build web apps, mobile apps, and AI tools for founders and product
+        teams. I take products from idea to launch.
+      </p>
+    </div>
+    <div class="w-full overflow-hidden rounded-2xl sm:w-64 sm:shrink-0">
+      <Image
+        src={hero}
+        alt="Reggie Escobar"
+        widths={[320, 640, 960]}
+        sizes="(min-width: 640px) 16rem, 100vw"
+        loading="eager"
+        class="aspect-[16/9] w-full object-cover object-right sm:aspect-[4/5]"
+      />
+    </div>
+  </section>
+
+  <section class="mt-16">
+    <h2 class="text-2xl font-semibold text-zinc-900">About me</h2>
+    <div class="mt-4 space-y-4 text-zinc-600">
+      <p>
+        I am a senior backend and full stack engineer with more than 7 years
+        of experience. I ship production systems in Node.js, Python, and
+        TypeScript. My work covers payment integrations, AI infrastructure,
+        and distributed backends for SaaS platforms.
+      </p>
+      <p>
+        I started to write code as a kid. Cheat menus for flash games became
+        personal blogs, then small apps in college, then a career in
+        software. Along the way I learned how to think in systems.
+      </p>
+      <p>
+        I live in Taipei, Taiwan, and I work with remote teams. On the side I
+        build my own SaaS products. If you want to talk about a project,
+        <a href="mailto:contact@reggieescobar.com" class="text-violet-700 hover:underline">send me an email</a>.
+      </p>
+    </div>
+  </section>
+
+  <p class="mt-12">
+    <a href="/posts/" class="font-medium text-violet-700 hover:underline">Read my posts →</a>
+  </p>
 </Base>
