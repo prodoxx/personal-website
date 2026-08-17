@@ -1,0 +1,80 @@
+---
+import { Image } from "astro:assets";
+import Base from "../layouts/Base.astro";
+import hero from "../assets/hero.png";
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      name: "Reggie Escobar",
+      url: "https://reggieescobar.com/",
+      image: "https://reggieescobar.com/images/reggie.png",
+      jobTitle: "Software Developer",
+      sameAs: [
+        "https://github.com/prodoxx",
+        "https://x.com/_reggieescobar",
+        "https://www.linkedin.com/in/reggie-escobar/",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      name: "Reggie Escobar",
+      url: "https://reggieescobar.com/",
+    },
+  ],
+});
+---
+
+<Base
+  title="Reggie Escobar"
+  description="Reggie Escobar is a software developer in Taipei. He builds web apps and AI tools, and he writes about what he learns."
+>
+  <script type="application/ld+json" set:html={jsonLd} slot="head" />
+
+  <section>
+    <div class="overflow-hidden rounded-2xl">
+      <Image
+        src={hero}
+        alt="Reggie Escobar"
+        widths={[640, 1280, 2048]}
+        sizes="(min-width: 42rem) 40rem, 100vw"
+        loading="eager"
+        class="w-full"
+      />
+    </div>
+    <h1 class="mt-8 text-4xl font-bold tracking-tight text-zinc-900">Reggie Escobar</h1>
+    <p class="mt-4 text-zinc-600">
+      I write software for a living, mostly web apps and AI tools. This is
+      my corner of the internet, where I share what I build and what I
+      learn.
+    </p>
+  </section>
+
+  <section class="mt-16">
+    <h2 class="text-2xl font-semibold text-zinc-900">About me</h2>
+    <div class="mt-4 space-y-4 text-zinc-600">
+      <p>
+        I work as a backend and full stack developer. Most of my code is
+        Node.js, Python, and TypeScript. Over the years I have worked on
+        payment integrations, AI infrastructure, and backends for SaaS
+        products.
+      </p>
+      <p>
+        I have worked in software for about 8 years. Most of what I know
+        came from building things, breaking them, and fixing them again. I
+        write about some of that here.
+      </p>
+      <p>
+        I live in Taipei, Taiwan. On the side I build small products of my
+        own. If you want to talk about code or a
+        project, <a href="mailto:contact@reggieescobar.com" class="text-amber-800 hover:underline">send me an email</a>.
+      </p>
+    </div>
+  </section>
+
+  <p class="mt-12">
+    <a href="/posts/" class="font-medium text-amber-800 hover:underline">Read my posts →</a>
+  </p>
+</Base>
