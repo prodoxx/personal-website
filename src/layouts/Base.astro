@@ -33,6 +33,12 @@ const ogImage = new URL("/images/reggie.png", Astro.site);
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#ffffff" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Reggie Escobar"
+      href={new URL("/rss.xml", Astro.site)}
+    />
     <slot name="head" />
   </head>
   <body class="bg-white text-zinc-800">
