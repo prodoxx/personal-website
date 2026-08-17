@@ -1,0 +1,59 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  ogType?: string;
+}
+
+const { title, description, ogType = "website" } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL("/images/reggie.png", Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@_reggieescobar" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
+    <slot name="head" />
+  </head>
+  <body class="bg-white text-zinc-800">
+    <div class="mx-auto flex min-h-screen max-w-2xl flex-col px-5">
+      <header class="flex items-center justify-between py-8">
+        <a href="/" class="font-semibold text-zinc-900">Reggie Escobar</a>
+        <nav>
+          <a href="/posts/" class="font-medium text-violet-700 hover:underline">Posts</a>
+        </nav>
+      </header>
+      <main class="flex-1 pb-16">
+        <slot />
+      </main>
+      <footer
+        class="flex flex-wrap gap-x-5 gap-y-2 border-t border-zinc-200 py-8 text-sm text-zinc-500"
+      >
+        <a href="https://github.com/prodoxx" class="hover:text-zinc-900">GitHub</a>
+        <a href="https://x.com/_reggieescobar" class="hover:text-zinc-900">X</a>
+        <a href="https://www.linkedin.com/in/reggie-escobar/" class="hover:text-zinc-900">LinkedIn</a>
+        <a href="mailto:contact@reggieescobar.com" class="hover:text-zinc-900">contact@reggieescobar.com</a>
+      </footer>
+    </div>
+  </body>
+</html>
