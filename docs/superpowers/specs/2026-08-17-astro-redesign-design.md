@@ -57,7 +57,7 @@ The background is white. Text is near black gray. Links and small accents use on
 
 A minimal header shows the site name on the left and one "Posts" link on the right. A small footer shows four links. They are GitHub (https://github.com/prodoxx), X (https://x.com/_reggieescobar), LinkedIn (https://www.linkedin.com/in/reggie-escobar/), and email (contact@reggieescobar.com).
 
-The front page hero is side by side. The left side shows the name as the h1, a one line role, and a short intro. The right side shows a cropped, rounded portion of `hero.png`. On mobile the photo stacks above the text. Below the hero, an about section holds a short rewrite of the story in a few paragraphs. The page ends with a "Posts" link. The Astro image component converts the PNG into small responsive files with set width and height.
+The front page hero is a rounded banner. The full wide photo sits in a rounded container at the top of the column. The name as the h1, a one line role, and a short intro follow below it. Below the hero, an about section holds a short rewrite of the story in a few paragraphs. The page ends with a "Posts" link. The Astro image component converts the PNG into small responsive files with set width and height.
 
 The posts list is a plain vertical list. Each entry shows the title as a link, the date, and the description. The post page shows the title as h1, the date, then the body with typography styles. A back link at the top returns to the list.
 
