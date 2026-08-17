@@ -13,4 +13,5 @@ Personal website built with Astro and Tailwind. Vercel deploys the site.
 
 1. Create a markdown file in `src/content/posts/`. The file name becomes the URL slug.
 2. Add `title`, `description`, and `date` to the frontmatter. Add `draft: true` to hide a post.
-3. Commit and push. Vercel builds and deploys the site.
+3. Start headings inside the post body at level two (`##`). The post title is the only h1 on the page.
+4. Commit and push. Vercel builds and deploys the site.

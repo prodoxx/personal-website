@@ -19,7 +19,7 @@ Drop the portfolio, contact, about, and blog pages. Drop `resume.pdf`. Old URLs 
 
 ## Stack
 
-- Astro 5, latest stable release, static output.
+- Astro, latest stable release (major 5 or newer), static output.
 - Tailwind 4 through the Vite plugin, plus the `@tailwindcss/typography` plugin for post bodies.
 - `@astrojs/sitemap` for the sitemap and `@astrojs/rss` for the feed.
 - pnpm, Node 24, deploy on Vercel. Keep `vercel.json` with the pnpm install command.
