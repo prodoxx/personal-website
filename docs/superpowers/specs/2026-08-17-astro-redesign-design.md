@@ -55,7 +55,7 @@ Draft posts do not appear in the list, the sitemap, or the RSS feed. The build f
 
 The background is white. Text is near black gray. Links and small accents use one warm brown tone, like coffee. Fonts come from the system font stack. The content sits in one centered column of about 42rem.
 
-A minimal header shows the site name on the left and one "Posts" link on the right. A small footer shows four links. They are GitHub (https://github.com/prodoxx), X (https://x.com/_reggieescobar), LinkedIn (https://www.linkedin.com/in/reggie-escobar/), and email (contact@reggieescobar.com).
+A minimal header shows the site name on the left and one "Posts" link on the right. A small footer shows three links. They are GitHub (https://github.com/prodoxx), X (https://x.com/_reggieescobar), and LinkedIn (https://www.linkedin.com/in/reggie-escobar/). The footer shows no email address, because scraper bots collect addresses from pages.
 
 The front page hero is a rounded banner. The full wide photo sits in a rounded container at the top of the column. The name as the h1 and a short intro follow below it. The copy speaks in a plain, humble developer voice with no job title claims. Below the hero, an about section holds a short rewrite of the story in a few paragraphs. The page ends with a "Posts" link. The Astro image component converts the PNG into small responsive files with set width and height.
 
