@@ -1,7 +1,11 @@
 ---
 import { Image } from "astro:assets";
+import PostList from "../components/PostList.astro";
 import Base from "../layouts/Base.astro";
+import { getPublishedPosts } from "../lib/posts";
 import hero from "../assets/hero.png";
+
+const recentPosts = (await getPublishedPosts()).slice(0, 5);
 
 const jsonLd = JSON.stringify({
   "@context": "https://schema.org",
@@ -74,7 +78,13 @@ const jsonLd = JSON.stringify({
     </div>
   </section>
 
-  <p class="mt-12">
-    <a href="/posts/" class="font-medium text-amber-800 hover:underline">Read my posts →</a>
-  </p>
+  <section class="mt-16">
+    <h2 class="text-2xl font-semibold text-zinc-900">Recent posts</h2>
+    <div class="mt-6">
+      <PostList posts={recentPosts} />
+    </div>
+    <p class="mt-10">
+      <a href="/posts/" class="font-medium text-amber-800 hover:underline">All posts →</a>
+    </p>
+  </section>
 </Base>
