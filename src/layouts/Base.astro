@@ -5,11 +5,13 @@ interface Props {
   title: string;
   description: string;
   ogType?: string;
+  // Large social share image. Without one, the site falls back to a small summary card.
+  image?: { src: string; width: number; height: number; alt: string };
 }
 
-const { title, description, ogType = "website" } = Astro.props;
+const { title, description, ogType = "website", image } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const ogImage = new URL("/images/reggie.png", Astro.site);
+const ogImage = new URL(image?.src ?? "/images/reggie.png", Astro.site);
 ---
 
 <!doctype html>
@@ -25,7 +27,17 @@ const ogImage = new URL("/images/reggie.png", Astro.site);
     <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
-    <meta name="twitter:card" content="summary" />
+    {
+      image && (
+        <Fragment>
+          <meta property="og:image:width" content={String(image.width)} />
+          <meta property="og:image:height" content={String(image.height)} />
+          <meta property="og:image:alt" content={image.alt} />
+          <meta name="twitter:image:alt" content={image.alt} />
+        </Fragment>
+      )
+    }
+    <meta name="twitter:card" content={image ? "summary_large_image" : "summary"} />
     <meta name="twitter:creator" content="@_reggieescobar" />
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

@@ -1,10 +1,13 @@
 ---
-import { getCollection, render } from "astro:content";
+import { getImage } from "astro:assets";
+import { render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import PostImage from "../../components/PostImage.astro";
 import Base from "../../layouts/Base.astro";
+import { formatDate, getPublishedPosts, readingMinutes } from "../../lib/posts";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("posts", ({ data }) => !data.draft);
+  const posts = await getPublishedPosts();
   return posts.map((post) => ({
     params: { slug: post.id },
     props: { post },
@@ -15,14 +18,19 @@ type Props = { post: CollectionEntry<"posts"> };
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+const minutes = readingMinutes(post.body ?? "");
 
-const formatDate = (date: Date) =>
-  date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    timeZone: "UTC",
-  });
+// Social platforms expect a 1200x630 share image. Meta tags cannot offer
+// format fallbacks like <picture>, so use PNG, which every platform renders.
+const shareImage = post.data.image
+  ? await getImage({ src: post.data.image, width: 1200, height: 630, format: "png" })
+  : undefined;
+const image = shareImage && {
+  src: shareImage.src,
+  width: 1200,
+  height: 630,
+  alt: post.data.imageAlt ?? post.data.title,
+};
 
 const jsonLd = JSON.stringify({
   "@context": "https://schema.org",
@@ -36,6 +44,7 @@ const jsonLd = JSON.stringify({
     url: "https://reggieescobar.com/",
   },
   mainEntityOfPage: new URL(`/posts/${post.id}/`, Astro.site).href,
+  ...(image && { image: new URL(image.src, Astro.site).href }),
 });
 ---
 
@@ -43,6 +52,7 @@ const jsonLd = JSON.stringify({
   title={`${post.data.title} | Reggie Escobar`}
   description={post.data.description}
   ogType="article"
+  image={image}
 >
   <script type="application/ld+json" set:html={jsonLd} slot="head" />
   <article>
@@ -50,14 +60,15 @@ const jsonLd = JSON.stringify({
     <h1 class="mt-4 text-3xl font-bold tracking-tight text-zinc-900">
       {post.data.title}
     </h1>
-    <time
-      datetime={post.data.date.toISOString()}
-      class="mt-2 block text-sm text-zinc-500"
+    <p class="mt-2 text-sm text-zinc-500">
+      <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+      <span aria-hidden="true"> · </span>
+      <span>{minutes} min read</span>
+    </p>
+    <div
+      class="prose prose-zinc mt-8 max-w-none prose-a:text-amber-800 prose-a:decoration-amber-800/40 prose-a:underline-offset-2 prose-a:hover:decoration-amber-800 prose-img:rounded-xl prose-img:border prose-img:border-zinc-200"
     >
-      {formatDate(post.data.date)}
-    </time>
-    <div class="prose prose-zinc mt-8 max-w-none">
-      <Content />
+      <Content components={{ img: PostImage }} />
     </div>
   </article>
 </Base>

@@ -1,0 +1,10 @@
+---
+// An image with a caption below it, such as a source credit.
+---
+
+<figure class="[&>p]:my-0">
+  <slot />
+  <figcaption class="text-center">
+    <slot name="caption" />
+  </figcaption>
+</figure>
