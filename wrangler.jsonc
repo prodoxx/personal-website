@@ -1,0 +1,10 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "reggieescobar",
+  "compatibility_date": "2026-10-26",
+  // Static site: Cloudflare serves the Astro build output, no Worker code.
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}
